@@ -34,7 +34,7 @@ public class JobController {
 	@RequestMapping("/postjob")
 	public ResponseEntity<Job> createJob(@RequestBody Job job) {
 
-		logger.info("incoming request for JobController ::::");
+		logger.info("Innnncoming request for JobController ::::");
 		try {
 			Job jobInfo = jobService.createNewJob(job);
 			logger.debug(job);
