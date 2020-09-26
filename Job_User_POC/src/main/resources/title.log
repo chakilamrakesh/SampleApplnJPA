@@ -1,0 +1,2 @@
+2020-09-25 16:49:40 INFO  Innnncoming request for JobController ::::
+2020-09-25 16:49:40 DEBUG Job [id=32, jobTitle=need HR, jobDescription=Need POC for Ecommerce website using spring boot with micro service, country=INDIA, state=TN, availability=Part-Time, replyRate=0, payRate=44, experience=5, skills=Java, Spring Boot, Hibernate, Micro Service, Oracle, REST, language=c, jobType=Development, userData=User [id=33, userName=New Way Coders Java]]

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.apache.log4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,25 +21,39 @@ import com.ojas.poc.message.ResponseMessage;
 import com.ojas.poc.model.Job;
 import com.ojas.poc.service.JobService;
 
-@RequestMapping(value="job" ,produces = { "application/json", "application/xml"} )
+
+@RequestMapping(value="job" ,produces = { "application/json", "application/xml" } , consumes = { "application/json", "application/xml" })
 @RestController
+/**
+ * 
+ * @author Rakesh Chakilam
+ *
+ */
 public class JobController {
 
 	Logger logger = Logger.getLogger(this.getClass());
-
+	
+	
 	@Autowired
 	public JobService jobService;
 
 	@RequestMapping("/postjob")
+	/**
+	 * 
+	 * @param job
+	 * @return
+	 */
+	 
 	public ResponseEntity<Job> createJob(@RequestBody Job job) {
 
-		logger.info("Innnncoming request for JobController ::::");
+		logger.info("request is in createJob API ::::");
+		logger.info("input request  for createJob API ::::"+job);
 		try {
 			Job jobInfo = jobService.createNewJob(job);
-			logger.debug(job);
+			logger.debug("created Job and response is ::::"+job);
 			return new ResponseEntity<Job>(jobInfo, HttpStatus.CREATED);
 		} catch (Exception e) {
-
+			logger.error("got error in createJob API ::::"+e);
 			return new ResponseEntity<Job>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -48,15 +61,17 @@ public class JobController {
 	@GetMapping
 	@RequestMapping("/getjob/{id}")
 	public ResponseEntity<Job> getJobByID(@PathVariable long id) {
-		logger.info("calling getJobByID API");
+		logger.info("request is in getJobByID API ::::");
+		logger.info("input request  for getJobByID API ::::"+id);
 		try {
 			Optional<Job> jobDetailsById = jobService.getJobById(id);
 			if (jobDetailsById.isPresent()) {
-				logger.debug(jobDetailsById);
+				logger.debug("getJobByID  response is ::::"+jobDetailsById);
 				return new ResponseEntity<Job>(jobDetailsById.get(), HttpStatus.OK);
 			}
 			return new ResponseEntity<Job>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
+			logger.error("got error in getJobByID API ::::"+e);
 			return new ResponseEntity<Job>(HttpStatus.NOT_FOUND);
 		}
 	}
@@ -64,15 +79,17 @@ public class JobController {
 	@GetMapping
 	@RequestMapping("/getByType/{type}")
 	public ResponseEntity<Object> getJobByType(@PathVariable String type) {
-
+		logger.info("request is in getJobByType API ::::");
+		logger.info("input request  for getJobByType API ::::"+type);
 		try {
 			List<Job> jobDetailsById = jobService.getJobByType(type);
 			if (jobDetailsById != null) {
-
+				logger.debug("getJobByType  response is ::::"+jobDetailsById);
 				return new ResponseEntity<Object>(jobDetailsById, HttpStatus.OK);
 			}
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
+			logger.error("got error in getJobByType API ::::"+e.getMessage());
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		}
 	}
@@ -81,14 +98,16 @@ public class JobController {
 	@RequestMapping("/getByExp/{exp}")
 	public ResponseEntity<Object> getJobByExperience(@PathVariable String exp) {
 		logger.info("request in getJobByExperience");
+		logger.info("input request  for getJobByExperience API ::::"+exp);
 		try {
 			List<Job> jobDetailsByExp = jobService.getJobByExperience(exp);
 			if (jobDetailsByExp != null) {
-
+				logger.debug("getJobByExperience  response is ::::"+jobDetailsByExp);
 				return new ResponseEntity<Object>(jobDetailsByExp, HttpStatus.OK);
 			}
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
+			logger.error("got error in getJobByExperience API ::::"+e.getMessage());
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		}
 	}
@@ -97,14 +116,16 @@ public class JobController {
 	@RequestMapping("/getByCountry/{country}")
 	public ResponseEntity<Object> getJobByCountry(@PathVariable String country) {
 		logger.info("request in getJobByCountry");
+		logger.info("input request  for getJobByCountry API ::::"+country);
 		try {
 			List<Job> jobDetailsByCountry = jobService.getJobByCountry(country);
 			if (jobDetailsByCountry != null) {
-
+				logger.debug("getJobByCountry  response is ::::"+jobDetailsByCountry);
 				return new ResponseEntity<Object>(jobDetailsByCountry, HttpStatus.OK);
 			}
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
+			logger.error("got error in getJobByCountry API ::::"+e.getMessage());
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		}
 	}
@@ -113,6 +134,7 @@ public class JobController {
 	@RequestMapping("/getByAvailability/{availability}")
 	public ResponseEntity<Object> getJobByAvailability(@PathVariable String availability) {
 		logger.info("request in getJobByAvailability");
+		logger.info("input request  for getJobByAvailability API ::::"+availability);
 		try {
 			List<Job> jobDetailsByCountry = jobService.getJobByAvaialbility(availability);
 			if (jobDetailsByCountry != null) {

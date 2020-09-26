@@ -58,6 +58,7 @@ public class ExcelHelper {
 					Cell currentCell = cellsInRow.next();
 
 					switch (cellIdx) {
+					
 					case 0:
 						job.setAvailability(currentCell.getStringCellValue());
 						break;
