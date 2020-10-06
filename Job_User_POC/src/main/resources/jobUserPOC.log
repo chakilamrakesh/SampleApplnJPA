@@ -1,0 +1,40 @@
+2020-09-26 14:40:22 INFO  calling getJobByID API
+2020-09-26 14:40:23 DEBUG Optional[Job [id=26, jobTitle=Developer, jobDescription=java, country=India, state=TG, availability=yes, replyRate=5 lakh, payRate=10k, experience=5 years, skills=good, language=java, jobType=fulll time, userData=null]]
+2020-09-26 16:43:45 INFO  JobUserPOC application  entry started
+2020-09-26 16:43:45 INFO  JobUserPOC application  entry started
+2020-09-26 16:59:43 INFO  JobUserPOC application  entry started
+2020-09-26 16:59:43 INFO  JobUserPOC application  entry started
+2020-09-26 17:03:22 INFO  JobUserPOC application  entry started
+2020-09-26 17:03:22 INFO  JobUserPOC application  entry started
+2020-09-26 17:04:36 INFO  JobUserPOC application  entry started
+2020-09-26 17:04:36 INFO  JobUserPOC application  entry started
+2020-09-26 17:09:18 INFO  request is in createJob API ::::
+2020-09-26 17:09:18 INFO  input request  for createJob API ::::Job [id=0, jobTitle=Web Developer, jobDescription=Need POC for Ecommerce website using spring boot with micro service, country=INDIA, state=TN, availability=Part-Time, replyRate=0, payRate=44, experience=5, skills=HTML,CSS, language=telugu, jobType=Web designer, userData=User [id=null, userName=varun chakilam]]
+2020-09-26 17:09:19 DEBUG createJob and response is ::::Job [id=34, jobTitle=Web Developer, jobDescription=Need POC for Ecommerce website using spring boot with micro service, country=INDIA, state=TN, availability=Part-Time, replyRate=0, payRate=44, experience=5, skills=HTML,CSS, language=telugu, jobType=Web designer, userData=User [id=35, userName=varun chakilam]]
+2020-09-26 17:09:32 INFO  request is in createJob API ::::
+2020-09-26 17:09:32 INFO  input request  for createJob API ::::Job [id=0, jobTitle=Web Developer, jobDescription=Need POC for Ecommerce website using spring boot with micro service, country=INDIA, state=TN, availability=Part-Time, replyRate=0, payRate=44, experience=5, skills=HTML,CSS, language=telugu, jobType=Web designer, userData=User [id=null, userName=varun chakilam]]
+2020-09-26 17:09:32 DEBUG createJob and response is ::::Job [id=36, jobTitle=Web Developer, jobDescription=Need POC for Ecommerce website using spring boot with micro service, country=INDIA, state=TN, availability=Part-Time, replyRate=0, payRate=44, experience=5, skills=HTML,CSS, language=telugu, jobType=Web designer, userData=User [id=37, userName=varun chakilam]]
+2020-09-26 17:09:51 INFO  request is in createJob API ::::
+2020-09-26 17:09:51 INFO  input request  for createJob API ::::Job [id=0, jobTitle=Web Developer, jobDescription=Need POC for Ecommerce website using spring boot with micro service, country=INDIA, state=TN, availability=Part-Time, replyRate=0, payRate=44, experience=5, skills=HTML,CSS, language=telugu, jobType=Web designer, userData=User [id=null, userName=varun chakilam]]
+2020-09-26 17:09:51 DEBUG createJob and response is ::::Job [id=38, jobTitle=Web Developer, jobDescription=Need POC for Ecommerce website using spring boot with micro service, country=INDIA, state=TN, availability=Part-Time, replyRate=0, payRate=44, experience=5, skills=HTML,CSS, language=telugu, jobType=Web designer, userData=User [id=39, userName=varun chakilam]]
+2020-09-26 17:16:32 INFO  JobUserPOC application  entry started
+2020-09-26 17:16:32 INFO  JobUserPOC application  entry started
+2020-09-26 17:50:57 INFO  JobUserPOC application  entry started
+2020-09-26 17:50:57 INFO  JobUserPOC application  entry started
+2020-09-26 18:54:44 INFO  JobUserPOC application  entry started
+2020-09-26 18:54:45 INFO  JobUserPOC application  entry started
+2020-09-26 18:57:51 INFO  JobUserPOC application  entry started
+2020-09-26 18:57:52 INFO  JobUserPOC application  entry started
+2020-10-06 15:12:17 INFO  JobUserPOC application  entry started
+2020-10-06 15:12:17 INFO  JobUserPOC application  entry started
+2020-10-06 15:13:43 INFO  JobUserPOC application  entry started
+2020-10-06 15:13:43 INFO  JobUserPOC application  entry started
+2020-10-06 15:18:29 INFO  JobUserPOC application  entry started
+2020-10-06 15:18:29 INFO  JobUserPOC application  entry started
+2020-10-06 15:25:07 INFO  JobUserPOC application  entry started
+2020-10-06 15:32:17 INFO  JobUserPOC application  entry started
+2020-10-06 15:32:49 INFO  JobUserPOC application  entry started
+2020-10-06 15:33:03 INFO  JobUserPOC application  entry started
+2020-10-06 15:33:18 INFO  JobUserPOC application  entry started
+2020-10-06 15:34:02 INFO  JobUserPOC application  entry started
+2020-10-06 15:51:20 INFO  JobUserPOC application  entry started

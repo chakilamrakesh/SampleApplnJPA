@@ -22,7 +22,7 @@ import com.ojas.poc.model.Job;
 import com.ojas.poc.service.JobService;
 
 
-@RequestMapping(value="job" ,produces = { "application/json", "application/xml" } , consumes = { "application/json", "application/xml" })
+@RequestMapping(value="job" ,produces = { "application/json", "application/xml", "multipart/form-data" } , consumes = { "application/json", "application/xml" ,"multipart/form-data"})
 @RestController
 /**
  * 
