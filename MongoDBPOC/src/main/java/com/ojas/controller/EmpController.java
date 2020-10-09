@@ -32,4 +32,10 @@ public class EmpController {
 		List<Employee> findAll = empdao.findAll();
 		return new ResponseEntity<Object>(findAll,HttpStatus.OK);
 	}
+	
+	@GetMapping("/getAllEmployees/{id}")
+	public ResponseEntity<Object> getEmpID(long id) {
+		List<Employee> findAll = empdao.findAll();
+		return new ResponseEntity<Object>(findAll,HttpStatus.OK);
+	}
 }
