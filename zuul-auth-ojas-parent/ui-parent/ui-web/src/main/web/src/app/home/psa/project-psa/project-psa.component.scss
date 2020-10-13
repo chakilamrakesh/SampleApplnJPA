@@ -1,0 +1,58 @@
+span{
+    font-size: 12px;
+}
+
+
+
+.header{
+    padding: 10px;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+    
+}
+p{
+    margin-bottom: 0;
+}
+.styleTo{
+    padding: 5px;
+    background-color: #fafafa;
+}
+.data{
+    padding: 15px;
+}
+
+.table tr.active td{
+    background-color: rgb(178, 241, 202);
+    color: black;
+  }
+  
+  .table tr.reject td{
+    background-color: rgb(253, 204, 204);
+    color: black
+  }
+
+  .borderTo{
+      border: 1px solid black;
+      padding: 10px;
+      margin:1px;
+  }
+
+  .tblpad {
+    padding: 3px !important;
+}
+
+.table th{
+    color:black !important;
+}
+.tbldata th{
+    color:white !important;
+}
+.colonWidth{
+    width: 160px;
+}
+.colonWidthresource{
+    width: 240px;
+}
+.colonWidthFinancials{
+    width: 230px;
+}

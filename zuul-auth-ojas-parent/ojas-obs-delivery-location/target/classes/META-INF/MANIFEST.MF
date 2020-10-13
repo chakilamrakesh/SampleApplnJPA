@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: ojas-obs-delivery-location
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: am18164
+Implementation-Vendor-Id: ojas-obs-delivery-location
+Build-Jdk: 1.8.0_211
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/ojas-obs-delivery-location
+Created-By: Maven Integration for Eclipse
+
