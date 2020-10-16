@@ -1,0 +1,144 @@
+<br>
+<div class="card-body">
+    <div class="card shadow bg-white rounded">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-sm">
+                    <label class="input-group">Emp Id</label>
+
+                    <div class="input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+                        </div>
+                        <input type="text" formControlName="empId" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.empId.errors }" />
+                        <div *ngIf="submitted && f.empId.errors" class="invalid-feedback">
+                            <div *ngIf="f.empId.errors.required"> empId is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <label class="input-group">Emp Name</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+                        </div>
+                        <input type="text" formControlName="empName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.empName.errors }" />
+                        <div *ngIf="submitted && f.empName.errors" class="invalid-feedback">
+                            <div *ngIf="f.empName.errors.required"> empName is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <label class="input-group">Emp Sal</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+                        </div>
+                        <input type="text" formControlName="empSal" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.empSal.errors }" />
+                        <div *ngIf="submitted && f.empSal.errors" class="invalid-feedback">
+                            <div *ngIf="f.empSal.errors.required">empSal is required</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><br>
+            <div class="row">
+                <div class="col-sm">
+                    <label class="input-group">Address</label>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+                        </div>
+                        <input type="text" formControlName="addres" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.addres.errors }" />
+                        <div *ngIf="submitted && f.addres.errors" class="invalid-feedback">
+                            <div *ngIf="f.addres.errors.required">addres is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <label class="input-group">Mobile Number</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+                        </div>
+                        <input type="text" formControlName="mobileNumber" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" />
+                        <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.mobileNumber.errors.required">mobileNumber is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                </div>
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-secondary" (click)="empUpadate()">Upadate</button>
+        </form>
+    </div>
+</div>
+<br>
+<div class="card-body">
+    <div class="card shadow bg-white rounded">
+        <h5 class="card-header text-success">Employee Details</h5>
+        <div class="card-body ">
+
+            <div class="form-row p-1">
+                <div class="col-5 text-info">
+                    <!-- <h6>All worker in/out time data is available here</h6> -->
+                </div>
+                <div class="col-4">
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control  float-right" placeholder="Search">
+                </div>
+            </div><br>
+            <div class="table-responsive">
+                <table class="table table-hover  table-bordered ">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">empId</th>
+                            <th scope="col">empName</th>
+                            <th scope="col">empSal</th>
+                            <th scope="col">mobileNumber</th>
+                            <th scope="col">addres</th>
+                            <th scope="col">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let employee of data; let i = index;">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{employee.empId}}</td>
+                            <td>{{employee.empName}}</td>
+                            <td>{{employee.empSal}}</td>
+                            <td>{{employee.mobileNumber}}</td>
+                            <td>{{employee.addres}}</td>
+                            <td>
+                                <button type="submit" class="btn btn-info"
+                                    (click)="empEdit(employee)">Edit</button>&nbsp;&nbsp;
+                                <button type="submit" class="btn btn-danger"
+                                    (click)="empDelete(employee)">Delete</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="p = $event" class="pagination pg-blue justify-content-end ">
+        </pagination-controls>
+
+    </div>
+
+
+</div>
