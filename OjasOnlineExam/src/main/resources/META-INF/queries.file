@@ -1,0 +1,99 @@
+CREATE DATABASE IF NOT EXISTS examDB;
+
+Use  examdb;
+
+create table Role (
+	roleid INT(6) AUTO_INCREMENT PRIMARY KEY,
+	rolename VARCHAR(20));
+
+
+CREATE TABLE UserDetails(
+   userid int not null auto_increment primary key,
+   username varchar(355) not null,
+   gender varchar(6) not null,
+   technology varchar(25) not null,
+   experience double,
+   qualification varchar(15),
+   email varchar(30),
+   mobile int not null,
+   uid int,
+   address varchar(50),
+   password varchar(10),
+   dob date,
+   role varchar(10)
+ );
+
+
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `question` varchar(355) DEFAULT NULL,
+  `technology` varchar(25) NOT NULL,
+  `option1` varchar(50) NOT NULL,
+  `option2` varchar(50) NOT NULL,
+  `option3` varchar(50) NOT NULL,
+  `option4` varchar(50) NOT NULL,
+  `correctoption` varchar(50) NOT NULL,
+  `questiontype` varchar(50) NOT NULL,
+  `questionlevel` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+
+
+create table options(optionid int not null auto_increment primary key,
+   option1 varchar(50) not null,
+   option2 varchar(50) not null,
+   option3 varchar(50) not null,
+   option4 varchar(50) not null,
+   correctoption varchar(50) not null,
+   questionid int not null,
+   FOREIGN KEY fk_question(questionid)
+   REFERENCES question(questionid)
+   ON UPDATE CASCADE
+   ON DELETE RESTRICT);
+   
+   
+   
+create table questionset(setid int not null auto_increment primary key,
+   questionid int not null,
+   FOREIGN KEY fk_question(questionid)
+   REFERENCES question(questionid)
+   ON UPDATE CASCADE
+   ON DELETE RESTRICT);
+
+
+create table testresult(resultid int not null auto_increment primary key,
+   userid int not null,
+   FOREIGN KEY fk_userdetails(userid)
+   REFERENCES userdetails(userid)
+   ON UPDATE CASCADE
+   ON DELETE RESTRICT,
+   score int not null);  
+
+
+create table usertest(testid int not null auto_increment primary key,
+   userid int not null,
+   FOREIGN KEY fk_userdetails(userid)
+   REFERENCES userdetails(userid)
+   ON UPDATE CASCADE
+   ON DELETE RESTRICT,
+   questionid int not null,
+   FOREIGN KEY fk_question(questionid)
+   REFERENCES question(questionid)
+   ON UPDATE CASCADE
+   ON DELETE RESTRICT,
+   answer varchar(5));
+
+
+create table usersignup(signupId int not null auto_increment primary key,
+   userid int not null,
+   FOREIGN KEY fk_userdetails(userid)
+   REFERENCES userdetails(userid)
+   ON UPDATE CASCADE
+   ON DELETE RESTRICT,
+   userpassword varchar(10) not null,
+   singupDate Date,
+   status boolean,
+   unlockDate Date);
+   
+   
